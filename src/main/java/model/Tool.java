@@ -7,16 +7,16 @@ public class Tool {
     private final String code;
     private final String type;
     private final String brand;
-    private final BigDecimal dailyPrice;
+    private final BigDecimal dailyBasePrice;
     private final boolean weekdayCharge;
     private final boolean weekendCharge;
     private final boolean holidayCharge;
 
-    public Tool(String code, String type, String brand, BigDecimal dailyPrice, boolean weekdayCharge, boolean weekendCharge, boolean holidayCharge) {
+    public Tool(String code, String type, String brand, BigDecimal dailyBasePrice, boolean weekdayCharge, boolean weekendCharge, boolean holidayCharge) {
         this.code = code;
         this.type = type;
         this.brand = brand;
-        this.dailyPrice = dailyPrice;
+        this.dailyBasePrice = dailyBasePrice;
         this.weekdayCharge = weekdayCharge;
         this.weekendCharge = weekendCharge;
         this.holidayCharge = holidayCharge;
@@ -34,8 +34,8 @@ public class Tool {
         return brand;
     }
 
-    public BigDecimal getDailyPrice() {
-        return dailyPrice;
+    public BigDecimal getDailyBasePrice() {
+        return dailyBasePrice;
     }
 
     public boolean isWeekdayCharge() {

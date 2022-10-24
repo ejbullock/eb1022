@@ -15,7 +15,7 @@ class ToolDataMapperTest {
         assertEquals(toolCd, tool.getCode());
         assertEquals("Chainsaw", tool.getType());
         assertEquals("Stihl", tool.getBrand());
-        assertEquals("1.49", tool.getDailyPrice().toString());
+        assertEquals("1.49", tool.getDailyBasePrice().toString());
         assertTrue(tool.isWeekdayCharge());
         assertFalse(tool.isWeekendCharge());
         assertTrue(tool.isHolidayCharge());
@@ -30,7 +30,7 @@ class ToolDataMapperTest {
         assertEquals(toolCd, tool.getCode());
         assertEquals("Ladder", tool.getType());
         assertEquals("Werner", tool.getBrand());
-        assertEquals("1.99", tool.getDailyPrice().toString());
+        assertEquals("1.99", tool.getDailyBasePrice().toString());
         assertTrue(tool.isWeekdayCharge());
         assertTrue(tool.isWeekendCharge());
         assertFalse(tool.isHolidayCharge());
@@ -45,7 +45,7 @@ class ToolDataMapperTest {
         assertEquals(toolCd, tool.getCode());
         assertEquals("Jackhammer", tool.getType());
         assertEquals("DeWalt", tool.getBrand());
-        assertEquals("2.99", tool.getDailyPrice().toString());
+        assertEquals("2.99", tool.getDailyBasePrice().toString());
         assertTrue(tool.isWeekdayCharge());
         assertFalse(tool.isWeekendCharge());
         assertFalse(tool.isHolidayCharge());
@@ -60,7 +60,7 @@ class ToolDataMapperTest {
         assertEquals(toolCd, tool.getCode());
         assertEquals("Jackhammer", tool.getType());
         assertEquals("Ridgid", tool.getBrand());
-        assertEquals("2.99", tool.getDailyPrice().toString());
+        assertEquals("2.99", tool.getDailyBasePrice().toString());
         assertTrue(tool.isWeekdayCharge());
         assertFalse(tool.isWeekendCharge());
         assertFalse(tool.isHolidayCharge());

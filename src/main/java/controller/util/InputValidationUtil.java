@@ -35,7 +35,7 @@ public class InputValidationUtil {
     }
 
     public static void isValidDateFormat(String value) throws Exception{
-        Pattern pattern = Pattern.compile("^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\\d\\d$", Pattern.CASE_INSENSITIVE);
+        Pattern pattern = Pattern.compile("^(0[1-9]|1[012])[/](0[1-9]|[12][0-9]|3[01])[/](19|20)\\d\\d$", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(value);
         boolean matchFound = matcher.find();
         if(!matchFound) {

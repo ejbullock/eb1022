@@ -5,7 +5,7 @@ import java.time.LocalDate;
 
 import static java.time.temporal.TemporalAdjusters.firstInMonth;
 
-public class HolidayEvaluationUtil {
+public class CalendarEvaluationUtil {
 
     public static boolean isLaborDay(LocalDate checkDate){
         int year = checkDate.getYear();
@@ -29,6 +29,15 @@ public class HolidayEvaluationUtil {
            return true;
         }
         return false;
+    }
+
+    public static boolean isWeekday(LocalDate checkDate){
+        switch(checkDate.getDayOfWeek()){
+            case SATURDAY:
+            case SUNDAY:
+                return false;
+        }
+        return true;
     }
 
 }

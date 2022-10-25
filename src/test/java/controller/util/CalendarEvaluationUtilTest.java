@@ -1,20 +1,19 @@
 package controller.util;
 
-import controller.util.HolidayEvaluationUtil;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class HolidayEvaluationUtilTest {
+public class CalendarEvaluationUtilTest {
 
     @Test
     public void testIsLaborDayPositive(){
         int year = 2022;
         LocalDate checkDate = LocalDate.of(year, 9, 5);
 
-        boolean result = HolidayEvaluationUtil.isLaborDay(checkDate);
+        boolean result = CalendarEvaluationUtil.isLaborDay(checkDate);
         assertTrue(result);
     }
 
@@ -23,7 +22,7 @@ public class HolidayEvaluationUtilTest {
         int year = 2022;
         LocalDate checkDate = LocalDate.of(year, 9, 6);
 
-        boolean result = HolidayEvaluationUtil.isLaborDay(checkDate);
+        boolean result = CalendarEvaluationUtil.isLaborDay(checkDate);
         assertFalse(result);
     }
 
@@ -32,7 +31,7 @@ public class HolidayEvaluationUtilTest {
         int year = 2022;
         LocalDate checkDate = LocalDate.of(year, 7, 4);
 
-        boolean result = HolidayEvaluationUtil.isIndependenceDay(checkDate);
+        boolean result = CalendarEvaluationUtil.isIndependenceDay(checkDate);
         assertTrue(result);
     }
 
@@ -41,7 +40,7 @@ public class HolidayEvaluationUtilTest {
         int year = 2022;
         LocalDate checkDate = LocalDate.of(year, 9, 6);
 
-        boolean result = HolidayEvaluationUtil.isIndependenceDay(checkDate);
+        boolean result = CalendarEvaluationUtil.isIndependenceDay(checkDate);
         assertFalse(result);
     }
 
@@ -50,7 +49,7 @@ public class HolidayEvaluationUtilTest {
         int year = 2020;
         LocalDate checkDate = LocalDate.of(year, 7, 3);
 
-        boolean result = HolidayEvaluationUtil.isIndependenceDay(checkDate);
+        boolean result = CalendarEvaluationUtil.isIndependenceDay(checkDate);
         assertTrue(result);
     }
 
@@ -59,7 +58,7 @@ public class HolidayEvaluationUtilTest {
         int year = 2020;
         LocalDate checkDate = LocalDate.of(year, 7, 4);
 
-        boolean result = HolidayEvaluationUtil.isIndependenceDay(checkDate);
+        boolean result = CalendarEvaluationUtil.isIndependenceDay(checkDate);
         assertFalse(result);
     }
 

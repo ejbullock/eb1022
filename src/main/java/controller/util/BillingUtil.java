@@ -24,17 +24,15 @@ public class BillingUtil {
 
         LocalDate checkDate = startDt;
         while(checkDate.isBefore(dueDt) ){
-            boolean isWeekday = true;
+            boolean isWeekday = false;
             boolean isHoliday = false;
 
-            if( HolidayEvaluationUtil.isLaborDay(checkDate) || HolidayEvaluationUtil.isIndependenceDay(checkDate)){
+            if( CalendarEvaluationUtil.isLaborDay(checkDate) || CalendarEvaluationUtil.isIndependenceDay(checkDate)){
                 isHoliday = true;
             }
 
-            switch(checkDate.getDayOfWeek()){
-                case SATURDAY:
-                case SUNDAY:
-                    isWeekday = false;
+            if(CalendarEvaluationUtil.isWeekday(checkDate)){
+                isWeekday = true;
             }
 
             if(isWeekday && weekdayCharge){

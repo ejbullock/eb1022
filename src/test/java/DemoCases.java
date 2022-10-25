@@ -42,9 +42,9 @@ public class DemoCases {
         assertEquals(discountPercentString, agreement.getDiscountPercent());
         assertEquals(dueDt, agreement.getDueDt());
         assertEquals(billableDays, agreement.getChargeDays());
-        assertEquals(subTotal, agreement.getPreDiscountTotal().toString());
-        assertEquals(discount, agreement.getDiscountAmount().toString());
-        assertEquals(total, agreement.getTotalOwed().toString());
+        assertEquals(subTotal, agreement.getPreDiscountTotal());
+        assertEquals(discount, agreement.getDiscountAmount());
+        assertEquals(total, agreement.getTotalOwed());
     }
 
     @Test
@@ -66,9 +66,9 @@ public class DemoCases {
         assertEquals(discountPercentString, agreement.getDiscountPercent());
         assertEquals(dueDt, agreement.getDueDt());
         assertEquals(billableDays, agreement.getChargeDays());
-        assertEquals(subTotal, agreement.getPreDiscountTotal().toString());
-        assertEquals(discount, agreement.getDiscountAmount().toString());
-        assertEquals(total, agreement.getTotalOwed().toString());
+        assertEquals(subTotal, agreement.getPreDiscountTotal());
+        assertEquals(discount, agreement.getDiscountAmount());
+        assertEquals(total, agreement.getTotalOwed());
     }
 
     @Test
@@ -90,9 +90,9 @@ public class DemoCases {
         assertEquals(discountPercentString, agreement.getDiscountPercent());
         assertEquals(dueDt, agreement.getDueDt());
         assertEquals(billableDays, agreement.getChargeDays());
-        assertEquals(subTotal, agreement.getPreDiscountTotal().toString());
-        assertEquals(discount, agreement.getDiscountAmount().toString());
-        assertEquals(total, agreement.getTotalOwed().toString());
+        assertEquals(subTotal, agreement.getPreDiscountTotal());
+        assertEquals(discount, agreement.getDiscountAmount());
+        assertEquals(total, agreement.getTotalOwed());
     }
 
     @Test
@@ -114,9 +114,9 @@ public class DemoCases {
         assertEquals(discountPercentString, agreement.getDiscountPercent());
         assertEquals(dueDt, agreement.getDueDt());
         assertEquals(billableDays, agreement.getChargeDays());
-        assertEquals(subTotal, agreement.getPreDiscountTotal().toString());
-        assertEquals(discount, agreement.getDiscountAmount().toString());
-        assertEquals(total, agreement.getTotalOwed().toString());
+        assertEquals(subTotal, agreement.getPreDiscountTotal());
+        assertEquals(discount, agreement.getDiscountAmount());
+        assertEquals(total, agreement.getTotalOwed());
     }
 
     @Test
@@ -138,9 +138,9 @@ public class DemoCases {
         assertEquals(discountPercentString, agreement.getDiscountPercent());
         assertEquals(dueDt, agreement.getDueDt());
         assertEquals(billableDays, agreement.getChargeDays());
-        assertEquals(subTotal, agreement.getPreDiscountTotal().toString());
-        assertEquals(discount, agreement.getDiscountAmount().toString());
-        assertEquals(total, agreement.getTotalOwed().toString());
+        assertEquals(subTotal, agreement.getPreDiscountTotal());
+        assertEquals(discount, agreement.getDiscountAmount());
+        assertEquals(total, agreement.getTotalOwed());
     }
 
 }

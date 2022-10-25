@@ -8,21 +8,22 @@ import java.time.LocalDate;
 
 public class BillingUtil {
 
-    private static final RoundingMode round =  RoundingMode.HALF_UP;
+    private static final RoundingMode ROUNDING_MODE = RoundingMode.HALF_UP;
+    private static final int SCALE_FACTOR = 2;
 
     public static BigDecimal calcDiscount(BigDecimal preDiscountTotal, BigDecimal discountPercent){
-        return preDiscountTotal.multiply(discountPercent).setScale(2, round);
+        return preDiscountTotal.multiply(discountPercent).setScale(SCALE_FACTOR, ROUNDING_MODE);
     }
 
     public static BigDecimal calcSubTotal(Tool rentalTool, int chargeDays){
-        return rentalTool.getDailyBasePrice().multiply( new BigDecimal(chargeDays)).setScale(2, round);
+        return rentalTool.getDailyBasePrice().multiply( new BigDecimal(chargeDays)).setScale(SCALE_FACTOR, ROUNDING_MODE);
     }
 
     public static int getBillableDayCount(LocalDate startDt, LocalDate dueDt, boolean weekdayCharge, boolean weekendCharge, boolean holidayCharge){
         int ret =  0;
 
         LocalDate checkDate = startDt;
-        while(checkDate.isBefore(dueDt) || checkDate.isEqual(dueDt)){
+        while(checkDate.isBefore(dueDt) ){
             boolean isWeekday = true;
             boolean isHoliday = false;
 

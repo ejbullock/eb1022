@@ -13,11 +13,10 @@ public class BillingUtilTest {
 
         LocalDate startDt = LocalDate.of(2020, 7, 1);
         int rentalDays = 6;
-        LocalDate dueDt = startDt.plusDays(rentalDays - 1);
+        LocalDate dueDt = startDt.plusDays(rentalDays);
         boolean isWeekdayCharge = true;
         boolean isWeekendCharge = false;
         boolean isHolidayCharge = false;
-
 
         int billableDays = BillingUtil.getBillableDayCount(startDt, dueDt, isWeekdayCharge, isWeekendCharge, isHolidayCharge);
         assertEquals(3, billableDays);
@@ -29,7 +28,7 @@ public class BillingUtilTest {
 
         LocalDate startDt = LocalDate.of(2020, 7, 1);
         int rentalDays = 6;
-        LocalDate dueDt = startDt.plusDays(rentalDays - 1);
+        LocalDate dueDt = startDt.plusDays(rentalDays);
         boolean isWeekdayCharge = false;
         boolean isWeekendCharge = true;
         boolean isHolidayCharge = false;
@@ -44,7 +43,7 @@ public class BillingUtilTest {
 
         LocalDate startDt = LocalDate.of(2020, 7, 1);
         int rentalDays = 6;
-        LocalDate dueDt = startDt.plusDays(rentalDays - 1);
+        LocalDate dueDt = startDt.plusDays(rentalDays);
         boolean isWeekdayCharge = true;
         boolean isWeekendCharge = false;
         boolean isHolidayCharge = true;
@@ -59,7 +58,7 @@ public class BillingUtilTest {
 
         LocalDate startDt = LocalDate.of(2020, 7, 1);
         int rentalDays = 6;
-        LocalDate dueDt = startDt.plusDays(rentalDays - 1);
+        LocalDate dueDt = startDt.plusDays(rentalDays);
         boolean isWeekdayCharge = false;
         boolean isWeekendCharge = true;
         boolean isHolidayCharge = true;
@@ -74,7 +73,7 @@ public class BillingUtilTest {
 
         LocalDate startDt = LocalDate.of(2020, 7, 1);
         int rentalDays = 6;
-        LocalDate dueDt = startDt.plusDays(rentalDays - 1);
+        LocalDate dueDt = startDt.plusDays(rentalDays);
         boolean isWeekdayCharge = true;
         boolean isWeekendCharge = true;
         boolean isHolidayCharge = false;

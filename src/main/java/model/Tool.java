@@ -1,6 +1,7 @@
 package model;
 
 import java.math.BigDecimal;
+import java.text.NumberFormat;
 
 public class Tool {
 
@@ -32,6 +33,10 @@ public class Tool {
 
     public String getBrand() {
         return brand;
+    }
+
+    public String getFormattedDailyBasePrice() {
+        return NumberFormat.getCurrencyInstance().format(dailyBasePrice);
     }
 
     public BigDecimal getDailyBasePrice() {

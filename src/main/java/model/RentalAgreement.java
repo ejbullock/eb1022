@@ -5,6 +5,7 @@ import controller.util.InputValidation;
 import mockDB.ToolDataMapper;
 
 import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -45,7 +46,18 @@ public class RentalAgreement {
 
 
     public void printReceipt(){
-
+        System.out.println("Tool Code: " + rentalTool.getCode());
+        System.out.println("Tool Type: " + rentalTool.getType());
+        System.out.println("Tool Brand: " + rentalTool.getBrand());
+        System.out.println("# Of Days For Rental: " + getRentalDays());
+        System.out.println("Check Out Date: " + getCheckoutDt());
+        System.out.println("Due Back: " + getDueDt());
+        System.out.println("Daily Rental Fee: " + rentalTool.getFormattedDailyBasePrice());
+        System.out.println("Billable Days: " + getChargeDays());
+        System.out.println("Sub-Total: " + getPreDiscountTotal());
+        System.out.println("Discount Percentage: " + getDiscountPercent());
+        System.out.println("Discount Amount: " + getDiscountAmount());
+        System.out.println("Total Due: " + getTotalOwed());
     }
 
     public Tool getRentalTool() {
@@ -69,7 +81,7 @@ public class RentalAgreement {
     }
 
     public String getPreDiscountTotal() {
-        return "$"+preDiscountTotal.toString();
+        return NumberFormat.getCurrencyInstance().format(preDiscountTotal);
     }
 
     public String getDiscountPercent() {
@@ -77,10 +89,10 @@ public class RentalAgreement {
     }
 
     public String getDiscountAmount() {
-        return "$"+discountAmount.toString();
+        return NumberFormat.getCurrencyInstance().format(discountAmount);
     }
 
     public String getTotalOwed() {
-        return "$"+totalOwed.toString();
+        return NumberFormat.getCurrencyInstance().format(totalOwed);
     }
 }

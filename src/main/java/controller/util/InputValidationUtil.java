@@ -8,6 +8,8 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class InputValidationUtil {
 
@@ -27,31 +29,17 @@ public class InputValidationUtil {
         ToolDataMapper mapper = new ToolDataMapper();
         try{
             mapper.readToolInfo(toolCode);
-        }catch(NullPointerException e){
+        }catch(Exception e){
             throw new Exception("Please enter a valid 4 character tool code.");
         }
     }
 
     public static void isValidDateFormat(String value) throws Exception{
-        Locale locale = Locale.ENGLISH;
-        LocalDateTime ldt = null;
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy", locale);
-
-        try {
-            ldt = LocalDateTime.parse(value, formatter);
-            String result = ldt.format(formatter);
-        } catch (DateTimeParseException e) {
-            try {
-                LocalDate ld = LocalDate.parse(value, formatter);
-                String result = ld.format(formatter);
-            } catch (DateTimeParseException exp) {
-                try {
-                    LocalTime lt = LocalTime.parse(value, formatter);
-                    String result = lt.format(formatter);
-                } catch (DateTimeParseException e2) {
-                    throw new Exception("Please enter a valid date in the format MM/dd/yyyy.");
-                }
-            }
+        Pattern pattern = Pattern.compile("^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\\d\\d$", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(value);
+        boolean matchFound = matcher.find();
+        if(!matchFound) {
+            throw new Exception("Please enter a valid date in the format MM/dd/yyyy.");
         }
     }
 

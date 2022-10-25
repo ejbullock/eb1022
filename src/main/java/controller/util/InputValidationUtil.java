@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Locale;
 
-public class InputValidation {
+public class InputValidationUtil {
 
     public static void validateDiscountPercent(int discountPercent) throws Exception{
         if(discountPercent < 0 || discountPercent > 100){

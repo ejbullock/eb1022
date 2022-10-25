@@ -1,7 +1,7 @@
 package model;
 
 import controller.util.BillingUtil;
-import controller.util.InputValidation;
+import controller.util.InputValidationUtil;
 import mockDB.ToolDataMapper;
 
 import java.math.BigDecimal;
@@ -25,8 +25,8 @@ public class RentalAgreement {
 
     public RentalAgreement(String toolCd, LocalDate checkoutDt, int rentalDays, int discountPercent) throws Exception {
 
-        InputValidation.validateDiscountPercent(discountPercent);
-        InputValidation.validateRentalDayCount(rentalDays);
+        InputValidationUtil.validateDiscountPercent(discountPercent);
+        InputValidationUtil.validateRentalDayCount(rentalDays);
 
         ToolDataMapper toolDataMapper = new ToolDataMapper();
         rentalTool = toolDataMapper.readToolInfo(toolCd);

@@ -8,7 +8,7 @@ import java.util.HashMap;
 public class ToolDataMapper {
 
     //dummy class used to retrieve data, this would be a class for CRUD interactions with DB
-    // provided a database existed, instead I use a hardcoded maps to retrieve data as needed
+    // provided a database existed, instead I use hardcoded maps to retrieve data as needed
 
     private final HashMap<String, String[]> toolMap;
     private final HashMap<String, String[]> priceMap;

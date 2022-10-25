@@ -54,4 +54,7 @@ public class BillingUtil {
         return ret;
     }
 
+    public static BigDecimal convertDiscountToDecimal(int discountPercent) {
+        return new BigDecimal( discountPercent/100.0).setScale(SCALE_FACTOR, ROUNDING_MODE);
+    }
 }

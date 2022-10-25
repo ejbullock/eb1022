@@ -34,10 +34,12 @@ public class DemoCases {
         int billableDays = 2;
         String dueDt = "07/05/20";
 
-        String subTotal = "3.98";
-        String discount = "0.40";
-        String total = "3.58";
+        String subTotal = "$3.98";
+        String discount = "$0.40";
+        String total = "$3.58";
+        String discountPercentString = "10%";
 
+        assertEquals(discountPercentString, agreement.getDiscountPercent());
         assertEquals(dueDt, agreement.getDueDt());
         assertEquals(billableDays, agreement.getChargeDays());
         assertEquals(subTotal, agreement.getPreDiscountTotal().toString());
@@ -56,10 +58,12 @@ public class DemoCases {
         int billableDays = 3;
         String dueDt = "07/07/15";
 
-        String subTotal = "4.47";
-        String discount = "1.12";
-        String total = "3.35";
+        String subTotal = "$4.47";
+        String discount = "$1.12";
+        String total = "$3.35";
+        String discountPercentString = "25%";
 
+        assertEquals(discountPercentString, agreement.getDiscountPercent());
         assertEquals(dueDt, agreement.getDueDt());
         assertEquals(billableDays, agreement.getChargeDays());
         assertEquals(subTotal, agreement.getPreDiscountTotal().toString());
@@ -78,10 +82,12 @@ public class DemoCases {
         int billableDays = 3;
         String dueDt = "09/09/15";
 
-        String subTotal = "8.97";
-        String discount = "0.00";
-        String total = "8.97";
+        String subTotal = "$8.97";
+        String discount = "$0.00";
+        String total = "$8.97";
+        String discountPercentString = "0%";
 
+        assertEquals(discountPercentString, agreement.getDiscountPercent());
         assertEquals(dueDt, agreement.getDueDt());
         assertEquals(billableDays, agreement.getChargeDays());
         assertEquals(subTotal, agreement.getPreDiscountTotal().toString());
@@ -100,10 +106,12 @@ public class DemoCases {
         int billableDays = 7;
         String dueDt = "07/24/15";
 
-        String subTotal = "20.93";
-        String discount = "0.00";
-        String total = "20.93";
+        String subTotal = "$20.93";
+        String discount = "$0.00";
+        String total = "$20.93";
+        String discountPercentString = "0%";
 
+        assertEquals(discountPercentString, agreement.getDiscountPercent());
         assertEquals(dueDt, agreement.getDueDt());
         assertEquals(billableDays, agreement.getChargeDays());
         assertEquals(subTotal, agreement.getPreDiscountTotal().toString());
@@ -122,10 +130,12 @@ public class DemoCases {
         int billableDays = 3;
         String dueDt = "07/19/20";
 
-        String subTotal = "8.97";
-        String discount = "4.49";
-        String total = "4.48";
+        String subTotal = "$8.97";
+        String discount = "$4.49";
+        String total = "$4.48";
+        String discountPercentString = "50%";
 
+        assertEquals(discountPercentString, agreement.getDiscountPercent());
         assertEquals(dueDt, agreement.getDueDt());
         assertEquals(billableDays, agreement.getChargeDays());
         assertEquals(subTotal, agreement.getPreDiscountTotal().toString());

@@ -66,19 +66,19 @@ public class RentalAgreement {
         return chargeDays;
     }
 
-    public BigDecimal getPreDiscountTotal() {
-        return preDiscountTotal;
+    public String getPreDiscountTotal() {
+        return "$"+preDiscountTotal.toString();
     }
 
-    public int getDiscountPercent() {
-        return discountPercent;
+    public String getDiscountPercent() {
+        return discountPercent+"%";
     }
 
-    public BigDecimal getDiscountAmount() {
-        return discountAmount;
+    public String getDiscountAmount() {
+        return "$"+discountAmount.toString();
     }
 
-    public BigDecimal getTotalOwed() {
-        return totalOwed;
+    public String getTotalOwed() {
+        return "$"+totalOwed.toString();
     }
 }

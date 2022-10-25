@@ -10,7 +10,7 @@ public class InputValidation {
 
     public static void validateRentalDayCount(int rentalDayCount) throws Exception{
         if(rentalDayCount < 1){
-            throw new Exception("Tools must be rented for a non-zero number of days.");
+            throw new Exception("Tools must be rented for a number of days greater than 0.");
         }
     }
 

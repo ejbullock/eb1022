@@ -10,6 +10,8 @@ import java.time.format.DateTimeFormatter;
 
 public class RentalAgreement {
 
+    private final DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("MM/dd/yy");
+
     private Tool rentalTool;
     private int rentalDays;
     private LocalDate checkoutDt;
@@ -55,11 +57,11 @@ public class RentalAgreement {
     }
 
     public String getCheckoutDt() {
-        return checkoutDt.format(DateTimeFormatter.ofPattern("MM/dd/yy"));
+        return checkoutDt.format(dateFormat);
     }
 
     public String getDueDt() {
-        return dueDt.format(DateTimeFormatter.ofPattern("MM/dd/yy"));
+        return dueDt.format(dateFormat);
     }
 
     public int getChargeDays() {

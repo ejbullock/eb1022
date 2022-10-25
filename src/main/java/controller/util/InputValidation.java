@@ -1,5 +1,7 @@
 package controller.util;
 
+import mockDB.ToolDataMapper;
+
 public class InputValidation {
 
     public static void validateDiscountPercent(int discountPercent) throws Exception{
@@ -11,6 +13,15 @@ public class InputValidation {
     public static void validateRentalDayCount(int rentalDayCount) throws Exception{
         if(rentalDayCount < 1){
             throw new Exception("Tools must be rented for a number of days greater than 0.");
+        }
+    }
+
+    public static void validateToolCode(String toolCode) throws Exception{
+        ToolDataMapper mapper = new ToolDataMapper();
+        try{
+            mapper.readToolInfo(toolCode);
+        }catch(NullPointerException e){
+            throw new Exception("Please enter a valid 4 character tool code.");
         }
     }
 
